@@ -209,6 +209,28 @@ public class UserIO extends ConnectionJDBC implements ICommon<User> {
         }
         return status;
     }
+    public static boolean findUser(String user){
+        Connection conn = getConnection();
+        PreparedStatement prestm;
+        boolean status = true;
+        try {
+            prestm = conn.prepareStatement("select * from userIO where userName = ?");
+            prestm.setString(1, user);
+            ResultSet rs = prestm.executeQuery();
+            status = rs.next();
+            rs.close();
+            prestm.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(UserIO.class.getName()).log(Level.SEVERE, null, ex);
+        }finally{
+            try {
+                conn.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(UserIO.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return status;
+    }
     public static void update(String user,String phone,String email,String address){
         Connection conn = getConnection();
         PreparedStatement prestm;

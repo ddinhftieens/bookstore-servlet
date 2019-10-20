@@ -28,7 +28,8 @@
     </head>
     <body>
         <div class="container mt-3" style="text-align: center;">
-            <h1>Đăng nhập</h1>
+            <img src="/image/product?IDcode=logo" style="width: 670px;height: 200px" class="mt-3">
+            <!--<h1>Đăng kí</h1>-->
             <form action="/register" method="post" class="mt-3">
                 <table style="font-size: large" class="table table-borderless">
                     <tr>
