@@ -69,6 +69,18 @@
                         <a class="nav-link" href="/register"><b style="color: white">Đăng kí</b></a>
                     </li>
                 </ul>
+                    </ul>
+                    <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#1"><i class="fas fa-envelope-open" style="font-size: larger;color: white"></i><b style="color: white"> Email: tiennd2503@gmail.com</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#2"><i class="fas fa-phone" style="font-size: larger;color: white"></i><b style="color: white"> SĐT: 0865672503</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#2"><i class="fas fa-globe-asia" style="font-size: larger;color: white"></i><b style="color: white"> Địa chỉ: Hà Nội</b></a>
+                    </li>
+                </ul>
             </div>
         </div>
         <div class="container mt-3" style="text-align: center"><img src="/image/product?IDcode=logo" style="width: 670px;height: 200px"/></div>
