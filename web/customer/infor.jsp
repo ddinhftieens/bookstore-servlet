@@ -45,15 +45,15 @@
                 <table class="table table-borderless mt-3">
                     <tr>
                         <td>ID</td>
-                        <td><%=user.getID()%></td>
+                        <td align="left"><%=user.getID()%></td>
                         <td>Tài khoản</td>
                         <td><input type="text" name="user" value="<%=user.getUser()%>" readonly=""></td>
                     </tr>
                     <tr>
                         <td>Tên</td>
-                        <td><%=user.getFristName()%></td>
+                        <td align="left"><%=user.getFristName()%></td>
                         <td>Họ</td>
-                        <td><%=user.getLastName()%></td>
+                        <td align="left"><%=user.getLastName()%></td>
                     </tr>
                     <tr>
                         <td>Địa chỉ</td>
@@ -67,7 +67,7 @@
                     </tr>
                     <tr>
                         <td>Vai trò</td>
-                        <td colspan="3"><%=user.getRole()%></td>
+                        <td colspan="3" align="left"><%=user.getRole()%></td>
                     </tr>
                     <tr>
                         <td colspan="2"><input type="submit" value="Lưu"></td>

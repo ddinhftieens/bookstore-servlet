@@ -56,7 +56,7 @@ and open the template in the editor.
         <div class="container-fluid mt-3" style="background-color: slategrey">
             <div class="row">
                 <div class="dropdown" style="display: <%=displayUser%>">
-                    <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" style="color: white;font-size: larger">
+                    <button type="button" class="btn dropdown-toggle mb-0 mt-0" data-toggle="dropdown" style="color: white;font-size: larger">
                         <i class="fas fa-user-cog" style="font-size: larger;color: white"></i>
                     </button>
                     <div class="dropdown-menu">
@@ -69,9 +69,9 @@ and open the template in the editor.
                     <li class="nav-item">
                         <a class="nav-link" href="/login"><b style="color: white">Đăng nhập</b></a>
                     </li>
-                    <li class="nav-item">
+<!--                    <li class="nav-item">
                         <a class="nav-link" href="/register"><b style="color: white">Đăng kí</b></a>
-                    </li>
+                    </li>-->
                 </ul>
                     <ul class="nav">
                     <li class="nav-item">
@@ -130,7 +130,7 @@ and open the template in the editor.
             <div class="roww" align="center">
                 <c:forEach items="<%=listProductNewww %>" var="i">
                     <div style="width: 200px;height: 320px;margin-right: 10px;margin-left: 10px">
-                        <a href="/customer/product?IDcode=${i.getID()}"><div class="text-center mt-2"><img src="/image/product?IDcode=${i.getIDcode()}" style="width: 160px;height: 160px"><p class="text-truncate">${i.getNameBook()}</p><p>${i.getPrice()} (-${i.getSale()}%)</p><p style="color: red">Giá bán ${i.getPrice() - i.getPrice()*i.getSale()/100}</p></div></a>
+                        <a href="/customer/product?IDcode=${i.getID()}"><div class="text-center mt-2"><img src="/image/product?IDcode=${i.getIDcode()}" style="width: 160px;height: 160px"><p class="text-truncate">${i.getNameBook()}</p><p>${i.getPrice()} (-${i.getSale()}%)</p><p style="color: red">Giá bán ${i.getPrice() - i.getPrice()*i.getSale()/100} đ</p></div></a>
                     </div>
                 </c:forEach>
             </div>
@@ -140,7 +140,7 @@ and open the template in the editor.
             <div class="roww" align="center">
                 <c:forEach items="${listTopSale}" var="i">
                     <div style="width: 200px;height: 320px;margin-right: 10px;margin-left: 10px">
-                        <a href="/customer/product?IDcode=${i.getID()}"><div class="text-center mt-2"><img src="/image/product?IDcode=${i.getIDcode()}" style="width: 160px;height: 160px"><p class="text-truncate">${i.getNameBook()}</p><p>${i.getPrice()} (-${i.getSale()}%)</p><p style="color: red">Giá bán ${i.getPrice() - i.getPrice()*i.getSale()/100}</p></div></a>
+                        <a href="/customer/product?IDcode=${i.getID()}"><div class="text-center mt-2"><img src="/image/product?IDcode=${i.getIDcode()}" style="width: 160px;height: 160px"><p class="text-truncate">${i.getNameBook()}</p><p>${i.getPrice()} (-${i.getSale()}%)</p><p style="color: red">Giá bán ${i.getPrice() - i.getPrice()*i.getSale()/100} đ</p></div></a>
                     </div>
                 </c:forEach>
             </div>
@@ -150,7 +150,7 @@ and open the template in the editor.
             <div class="roww" align="center">
                 <c:forEach items="${listBestSale}" var="i">
                     <div style="width: 200px;height: 320px;margin-right: 10px;margin-left: 10px">
-                        <a href="/customer/product?IDcode=${i.getID()}"><div class="text-center mt-2"><img src="/image/product?IDcode=${i.getIDcode()}" style="width: 160px;height: 160px"><p class="text-truncate">${i.getNameBook()}</p><p>${i.getPrice()} (-${i.getSale()}%)</p><p style="color: red">Giá bán ${i.getPrice() - i.getPrice()*i.getSale()/100}</p></div></a>
+                        <a href="/customer/product?IDcode=${i.getID()}"><div class="text-center mt-2"><img src="/image/product?IDcode=${i.getIDcode()}" style="width: 160px;height: 160px"><p class="text-truncate">${i.getNameBook()}</p><p>${i.getPrice()} (-${i.getSale()}%)</p><p style="color: red">Giá bán ${i.getPrice() - i.getPrice()*i.getSale()/100} đ</p></div></a>
                     </div>
                 </c:forEach>
             </div>

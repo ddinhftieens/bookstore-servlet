@@ -29,7 +29,7 @@
     <body>
         <div class="container mt-3" style="text-align: center;">
             <img src="/image/product?IDcode=logo" style="width: 670px;height: 200px" class="mt-3">
-            <!--<h1>Đăng nhập</h1>-->
+            
             <form action="/login" method="post" class="mt-3">
                 <table style="font-size: large" class="table table-borderless">
                     <tr>
@@ -39,6 +39,10 @@
                     <tr>
                         <td>Mật khẩu</td>
                         <td><input type="password" name="pass" required="" placeholder="Mật khẩu"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td align="left"><a href="/register">Chưa có tài khoản. Đăng kí tại đây !</a></td>
                     </tr>
                     <tr>
                         <td align="right"><input type="checkbox" name="remember" value="remember"></td>

@@ -52,8 +52,8 @@
         <div class="container-fluid mt-3" style="background-color: slategrey">
             <div class="row">
                 <div class="dropdown" style="display: <%=displayUser%>">
-                    <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" style="color: white;font-size: larger">
-                        <i class="fas fa-user" style="font-size: larger;color: white"></i>
+                    <button type="button" class="btn dropdown-toggle mb-0 mt-0" data-toggle="dropdown" style="color: white;font-size: larger">
+                        <i class="fas fa-user-cog" style="font-size: larger;color: white"></i>
                     </button>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="/customer/logined/infor">Thông tin</a>
@@ -65,9 +65,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/login"><b style="color: white">Đăng nhập</b></a>
                     </li>
-                    <li class="nav-item">
+<!--                    <li class="nav-item">
                         <a class="nav-link" href="/register"><b style="color: white">Đăng kí</b></a>
-                    </li>
+                    </li>-->
                 </ul>
                     </ul>
                     <ul class="nav">

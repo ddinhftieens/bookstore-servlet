@@ -35,7 +35,7 @@
             <div class="roww" align="center">
                 <c:forEach items="${product}" var="i">
                     <div style="width: 200px;height: 320px;margin-right: 10px;margin-left: 10px">
-                        <a href="/customer/product?IDcode=${i.getID()}"><div class="text-center mt-2"><img src="/image/product?IDcode=${i.getIDcode()}" style="width: 160px;height: 160px"><p class="text-truncate">${i.getNameBook()}</p><p>${i.getPrice()} (-${i.getSale()}%)</p><p style="color: red">Giá bán ${i.getPrice() - i.getPrice()*i.getSale()/100}</p></div></a>
+                        <a href="/customer/product?IDcode=${i.getID()}"><div class="text-center mt-2"><img src="/image/product?IDcode=${i.getIDcode()}" style="width: 160px;height: 160px"><p class="text-truncate">${i.getNameBook()}</p><p>${i.getPrice()} (-${i.getSale()}%)</p><p style="color: red">Giá bán ${i.getPrice() - i.getPrice()*i.getSale()/100} đ</p></div></a>
                     </div>
                 </c:forEach>
             </div>
