@@ -44,7 +44,8 @@ public class ForgotPassServlet extends HttpServlet {
             session.setAttribute("salt", us.getSaltEncoder());
             int code = 0;
             try {
-                code = SendEmailConfim.send("tiennd2503@gmail.com", "Tjeens03251997", us.getEmail());
+                // nhap dia chi email va password
+                code = SendEmailConfim.send("diachi_email","matkhau_email",us.getEmail());
                 session.setAttribute("code", code+"");
             } catch (MessagingException ex) {
                 Logger.getLogger(ForgotPassServlet.class.getName()).log(Level.SEVERE, null, ex);
