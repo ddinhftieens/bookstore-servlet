@@ -29,9 +29,11 @@ public class ProductServlet extends HttpServlet{
         req.setCharacterEncoding("UTF-8");
         resp.setContentType("text/html");
         String IDcatalog = req.getParameter("IDcatalog");
+        String nameCatalog = req.getParameter("name");
         List<Product> listProduct = productImpl.getAllbyID(Integer.parseInt(IDcatalog));
         req.setAttribute("listProduct", listProduct);
         req.setAttribute("IDcatalog", IDcatalog);
+        req.setAttribute("nameCatalog", nameCatalog);
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/admin/admin-product.jsp");
         requestDispatcher.forward(req, resp);
     }

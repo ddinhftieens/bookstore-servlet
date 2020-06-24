@@ -37,8 +37,8 @@ public class ProductImpl extends ConnectionJDBC implements ICommon<Product>{
             prestm.setString(7, t.getNXB());
             prestm.setInt(8, t.getNumberpage());
             prestm.setInt(9, t.getQuantity());
-            prestm.setFloat(10, t.getPrice());
-            prestm.setFloat(11, t.getSale());
+            prestm.setDouble(10, t.getPrice());
+            prestm.setDouble(11, t.getSale());
             prestm.setInt(12, t.getIDcatalog());
             prestm.setString(13, t.getStatus());
             prestm.executeUpdate();
@@ -62,8 +62,8 @@ public class ProductImpl extends ConnectionJDBC implements ICommon<Product>{
             prestm.setString(5, t.getDateofissue());
             prestm.setInt(7, t.getNumberpage());
             prestm.setInt(8, t.getQuantity());
-            prestm.setFloat(9, t.getPrice());
-            prestm.setFloat(10, t.getSale());
+            prestm.setDouble(9, t.getPrice());
+            prestm.setDouble(10, t.getSale());
             prestm.setString(11, t.getStatus());
             prestm.setInt(12, t.getID());
             prestm.execute();
@@ -128,8 +128,40 @@ public class ProductImpl extends ConnectionJDBC implements ICommon<Product>{
 
     @Override
     public Product getByName(String name) {
-        Product product = new Product();
-        return product;
+        Product pro = new Product();
+        Connection conn = getConnection();
+        try {
+            Statement statement = conn.createStatement();
+            ResultSet resultSet = statement.executeQuery("select * from product where nameBook = '" + name+"'");
+            while (resultSet.next()){
+                pro.setID(resultSet.getInt(1));
+                pro.setNameBook(resultSet.getString(2));
+                pro.setAuthor(resultSet.getString(3));
+                pro.setIDcode(resultSet.getString(4));
+                pro.setDatecreated(resultSet.getString(5));
+                pro.setDescription(resultSet.getString(6));
+                pro.setDateofissue(resultSet.getString(7));
+                pro.setNXB(resultSet.getString(8));
+                pro.setNumberpage(resultSet.getInt(9));
+                pro.setQuantity(resultSet.getInt(10));
+                pro.setPrice(resultSet.getFloat(11));
+                pro.setSale(resultSet.getFloat(12));
+                pro.setIDcatalog(resultSet.getInt(13));
+                pro.setStatus(resultSet.getString(14));
+            }
+            statement.close();
+            resultSet.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(ProductImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        finally{
+            try {
+                conn.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(ProductImpl.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return pro;
     }
 
     @Override
@@ -139,6 +171,47 @@ public class ProductImpl extends ConnectionJDBC implements ICommon<Product>{
         try {
             Statement statement = conn.createStatement();
             ResultSet resultSet = statement.executeQuery("select * from product");
+            while (resultSet.next()){
+                Product pro = new Product();
+                pro.setID(resultSet.getInt(1));
+                pro.setNameBook(resultSet.getString(2));
+                pro.setAuthor(resultSet.getString(3));
+                pro.setIDcode(resultSet.getString(4));
+                pro.setDatecreated(resultSet.getString(5));
+                pro.setDescription(resultSet.getString(6));
+                pro.setDateofissue(resultSet.getString(7));
+                pro.setNXB(resultSet.getString(8));
+                pro.setNumberpage(resultSet.getInt(9));
+                pro.setQuantity(resultSet.getInt(10));
+                
+                pro.setPrice(resultSet.getFloat(11));
+                pro.setSale(resultSet.getFloat(12));
+                pro.setIDcatalog(resultSet.getInt(13));
+                pro.setStatus(resultSet.getString(14));
+                productList.add(pro);
+            }
+            statement.close();
+            resultSet.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(ProductImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        finally{
+            try {
+                conn.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(ProductImpl.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return productList;
+    }
+
+    @Override
+    public List<Product> getAllbyID(int ID) {
+        Connection conn = getConnection();
+        List<Product> productList = new ArrayList<>();
+        try {
+            Statement statement = conn.createStatement();
+            ResultSet resultSet = statement.executeQuery("select * from product where IDcatalog = "+ID);
             while (resultSet.next()){
                 Product pro = new Product();
                 pro.setID(resultSet.getInt(1));
@@ -171,14 +244,12 @@ public class ProductImpl extends ConnectionJDBC implements ICommon<Product>{
         }
         return productList;
     }
-
-    @Override
-    public List<Product> getAllbyID(int ID) {
+    public List<Product> getAllbyName(String name) {
         Connection conn = getConnection();
         List<Product> productList = new ArrayList<>();
         try {
             Statement statement = conn.createStatement();
-            ResultSet resultSet = statement.executeQuery("select * from product where IDcatalog = "+ID);
+            ResultSet resultSet = statement.executeQuery("select * from product where nameBook LIKE '%" + name+"%'");
             while (resultSet.next()){
                 Product pro = new Product();
                 pro.setID(resultSet.getInt(1));

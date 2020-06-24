@@ -6,6 +6,7 @@
 package AdminController;
 
 import DAO.ProductImpl;
+import DAO.ViewDAO;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -24,6 +25,7 @@ public class DeleteProductServlet extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String IDproduct = req.getParameter("IDproduct");
+        ViewDAO.delete(Integer.parseInt(IDproduct));
         produceImpl.delete(Integer.parseInt(IDproduct));
         resp.sendRedirect(req.getContextPath()+"/admin/catalog/product?IDcatalog="+req.getParameter("IDcatalog"));
     }

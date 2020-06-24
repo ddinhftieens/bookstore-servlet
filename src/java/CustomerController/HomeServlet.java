@@ -69,7 +69,7 @@ public class HomeServlet extends HttpServlet {
             }
         });
         List<Product> listTopSale = new ArrayList();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < (listproduct.size()>=10?10:listproduct.size()) ; i++) {
             listTopSale.add(listproduct.get(i));
         }
         listproduct.sort(new Comparator<Product>() {
@@ -81,7 +81,7 @@ public class HomeServlet extends HttpServlet {
             }
         });
         List<Product> listBestSale = new ArrayList();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < (listproduct.size()>=10?10:listproduct.size()); i++) {
             listBestSale.add(listproduct.get(i));
         }
         req.setAttribute("listBestSale", listBestSale);

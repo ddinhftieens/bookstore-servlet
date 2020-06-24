@@ -31,6 +31,19 @@ public class ViewDAO extends ConnectionJDBC {
             Logger.getLogger(ViewDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    public static void delete(int ID) {
+        Connection conn = getConnection();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement("delete from viewDB where idproduct = ?");
+            preparedStatement.setInt(1,ID);
+            preparedStatement.execute();
+            conn.close();
+            preparedStatement.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
 
     public static int readView(int IDproduct) {
         int k = 0;

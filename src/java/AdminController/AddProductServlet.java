@@ -5,7 +5,9 @@
  */
 package AdminController;
 
+import DAO.CatalogImpl;
 import DAO.ProductImpl;
+import Model.Catalog;
 import Model.Product;
 import java.io.File;
 import java.io.IOException;
@@ -31,6 +33,7 @@ import javax.servlet.http.Part;
 public class AddProductServlet extends HttpServlet{
     
     private ProductImpl productImpl = new ProductImpl();
+    private CatalogImpl catalogImpl = new CatalogImpl();
     private int IDcatalog;
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -45,6 +48,8 @@ public class AddProductServlet extends HttpServlet{
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
         req.setCharacterEncoding("UTF-8");
+        Catalog catalog = new Catalog();
+        catalog = catalogImpl.getByID(this.IDcatalog);
         Product product = new Product();
         product.setNameBook(req.getParameter("nameBook"));
         product.setAuthor(req.getParameter("author"));
@@ -72,6 +77,6 @@ public class AddProductServlet extends HttpServlet{
         part.write(UPLOAD + File.separator + IDcode+".jpg");
         product.setStatus(req.getParameter("status"));
         productImpl.add(product);
-        resp.sendRedirect(req.getContextPath()+"/admin/catalog/product?IDcatalog="+this.IDcatalog);
+        resp.sendRedirect(req.getContextPath()+"/admin/catalog/product?IDcatalog="+this.IDcatalog+"&name=" + catalog.getNameCatalog());
     }
 }

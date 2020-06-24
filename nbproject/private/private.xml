@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/Dell/Documents/NetBeansProjects/BTL_Web/src/java/DAO/ProductImpl.java</file>
+            <file>file:/C:/Users/Dell/Documents/NetBeansProjects/BTL_Web/web/customer/forgotPass.jsp</file>
+            <file>file:/C:/Users/Dell/Documents/NetBeansProjects/BTL_Web/src/java/AdminController/CatalogServlet.java</file>
+            <file>file:/C:/Users/Dell/Documents/NetBeansProjects/BTL_Web/src/java/AdminController/ProductServlet.java</file>
+            <file>file:/C:/Users/Dell/Documents/NetBeansProjects/BTL_Web/src/java/DAO/CatalogImpl.java</file>
+            <file>file:/C:/Users/Dell/Documents/NetBeansProjects/BTL_Web/src/java/AdminController/DeleteProductServlet.java</file>
+            <file>file:/C:/Users/Dell/Documents/NetBeansProjects/BTL_Web/src/java/AdminController/EditProductServlet.java</file>
+            <file>file:/C:/Users/Dell/Documents/NetBeansProjects/BTL_Web/src/java/Model/Catalog.java</file>
+            <file>file:/C:/Users/Dell/Documents/NetBeansProjects/BTL_Web/web/customer/cart.jsp</file>
+            <file>file:/C:/Users/Dell/Documents/NetBeansProjects/BTL_Web/web/admin/admin-product.jsp</file>
+            <file>file:/C:/Users/Dell/Documents/NetBeansProjects/BTL_Web/web/admin/admin-add-product.jsp</file>
+            <file>file:/C:/Users/Dell/Documents/NetBeansProjects/BTL_Web/web/index.jsp</file>
+            <file>file:/C:/Users/Dell/Documents/NetBeansProjects/BTL_Web/src/java/AdminController/AddProductServlet.java</file>
+            <file>file:/C:/Users/Dell/Documents/NetBeansProjects/BTL_Web/src/java/AdminController/EditCatalogServlet.java</file>
+            <file>file:/C:/Users/Dell/Documents/NetBeansProjects/BTL_Web/web/admin/admin-catalog.jsp</file>
+        </group>
+    </open-files>
+</project-private>
